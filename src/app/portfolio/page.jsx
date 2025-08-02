@@ -8,40 +8,31 @@ const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Varmala Preservation",
+    desc: "Your varmala is more than just a wedding garland—it’s a symbol of sacred vows and emotional memories. Through delicate resin preservation, we transform your varmala into a timeless piece of art that captures the beauty and sentiment of your special day. Each piece is custom-designed, embellished with elements like names, wedding dates, dried florals, pearls, or gold foil, and sealed in premium-grade resin. Perfect as a centerpiece, wall frame, or tabletop décor—this is not just preservation, it's your love story, beautifully frozen in time.",
+    img: "/varmala.jpg",
+    link: "#",
   },
   {
     id: 2,
     color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
+    title: "Rakhi & Platter",
+    desc: "Celebrate Raksha Bandhan with a touch of elegance and personalization. This combo includes a beautifully handcrafted resin Rakhi customized with names, initials, or symbols, paired with a matching resin platter designed to complement the occasion. Decorated with dried flowers, shimmer, or traditional motifs, this set is perfect for gifting or keeping as a memorable keepsake.",
+    img: "/rakhi_plater.jpg",
+    link: "#",
   },
   {
     id: 3,
     color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "https://lama.dev",
-  },
-  {
-    id: 4,
-    color: "from-purple-300 to-red-300",
-    title: "Spotify Music App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "https://lama.dev",
+    title: "Rakhi Hamper",
+    desc: "Make this Raksha Bandhan unforgettable with a handcrafted resin Rakhi, custom-made to hold your love and creativity. Each hamper includes a unique resin Rakhi personalized with names, initials, or tiny elements like dried flowers, glitter, or charms—sealed forever in glossy resin. Complete with festive packaging and thoughtful add-ons, it’s not just a Rakhi—it’s a keepsake.",
+    img: "/rakhi_hamper.jpg",
+    link: "#",
   },
 ];
 
 const PortfolioPage = () => {
   const ref = useRef();
-
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
@@ -54,7 +45,7 @@ const PortfolioPage = () => {
     >
       <div className="h-[600vh] relative" ref={ref}>
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
-          My Works
+          Products
         </div>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
@@ -64,18 +55,25 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
+                <div className="flex flex-col items-center justify-center text-center gap-8 text-white px-4">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
-                  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                    <Image src={item.img} alt="" fill />
+                  <div className="relative bg-white rounded-lg w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-contain rounded-lg"
+                    />
                   </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+                  <p className="w-80 md:w-96 lg:w-[600px] lg:text-lg xl:w-[700px]">
                     {item.desc}
                   </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
+                  <Link href={item.link}>
+                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-6 lg:text-lg bg-white text-gray-700 font-semibold rounded shadow-lg hover:scale-105 transition">
+                      See More
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -83,14 +81,18 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Footer CTA */}
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-8xl">Do you have a project?</h1>
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold">
+          Want to be the part of the family?
+        </h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}
             transition={{ duration: 8, ease: "linear", repeat: Infinity }}
             viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px] "
+            className="w-64 h-64 md:w-[500px] md:h-[500px]"
           >
             <defs>
               <path
@@ -100,7 +102,7 @@ const PortfolioPage = () => {
             </defs>
             <text fill="#000">
               <textPath xlinkHref="#circlePath" className="text-xl">
-                Front-end Developer and UI Designer
+                Preserve Memories
               </textPath>
             </text>
           </motion.svg>
@@ -108,7 +110,7 @@ const PortfolioPage = () => {
             href="/contact"
             className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
           >
-            Hire Me
+            Click Here
           </Link>
         </div>
       </div>

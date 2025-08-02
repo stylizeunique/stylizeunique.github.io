@@ -42,22 +42,22 @@ const AboutPage = () => {
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
               Hi, I'm Anshu, the hands and heart behind this resin art journey.
-              What started as a passion project soon became my purpose—preserving life’s most precious moments in resin, 
+              What started as a passion project soon became my purpose—preserving life's most precious moments in resin, 
               so they can be cherished forever.
 
               I specialize in turning personal keepsakes like wedding varmalas, dried flowers, baby items, and 
               handwritten notes into timeless resin artworks. Each piece I create is deeply personal, handcrafted 
               with care, and designed to honor the emotions and memories it holds.
 
-              Resin isn’t just a material for me—it’s a medium of storytelling. I believe every item has a story, 
+              Resin isn't just a material for me—it's a medium of storytelling. I believe every item has a story, 
               and my job is to give that story a beautiful, lasting home.
 
               Whether you're newly married, celebrating a milestone, or simply want to preserve something that means 
-              the world to you—I’m here to help you turn it into art that speaks to your soul.
+              the world to you—I'm here to help you turn it into art that speaks to your soul.
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
-              Let’s preserve your memories together.
+              Let's preserve your memories together.
             </span>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
